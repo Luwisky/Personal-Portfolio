@@ -1,0 +1,37 @@
+{
+  "heroImage": "hero.png",
+  "projects": [
+    {
+      "name": "A Testimonial Page",
+      "image": "https://my-personal-portfolio-kmor.vercel.app/images/Testimonal.png",
+      "tech": "HTML, CSS",
+      "description": "A responsive testimonial section showcasing user feedback with swipe and card layouts.",
+      "url_demo": "https://testimonial-five-coral.vercel.app/",
+      "url_code": "https://github.com/Luwisky"
+    },
+    {
+      "name": "Newsletter",
+      "image": "https://my-personal-portfolio-kmor.vercel.app/images/Newsletter.png",
+      "tech": "HTML, CSS, JavaScript",
+      "description": "A subscription form and landing layout focused on conversion, accessibility and progressive enhancement.",
+      "url_demo": "https://newsletter-nine-pied.vercel.app/",
+      "url_code": "https://github.com/Luwisky"
+    },
+    {
+      "name": "Recipe Page",
+      "image": "https://my-personal-portfolio-kmor.vercel.app/images/Recipe%20page.png",
+      "tech": "HTML, CSS",
+      "description": "A clean recipe layout demonstrating layout composition, imagery and responsive typography.",
+      "url_demo": "https://recipe-lyart-one.vercel.app/",
+      "url_code": "https://github.com/Luwisky"
+    },
+    {
+      "name": "Landing Page",
+      "image": "https://my-personal-portfolio-kmor.vercel.app/images/landingpage.png",
+      "tech": "HTML, CSS",
+      "description": "A modern product landing page with hero, features and call-to-action sections optimized for performance.",
+      "url_demo": "https://meet-landing-page-flax-iota.vercel.app/",
+      "url_code": "https://github.com/Luwisky"
+    }
+  ]
+}

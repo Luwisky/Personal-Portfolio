@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monica Nkiri - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header id="main-header">
+    <h1 class="fade-in"><a href="#">Monica Nkiri</a></h1>
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+</header>
+<div id="nav-overlay" aria-hidden="true"></div>
+
+<section id="hero">
+    <div class="hero-content fade-up">
+        <img id="hero-img" class="hero-avatar" src="image/hero.jpg"  alt="Monica Nkiri" />
+        <h2>Hello, I'm <span>Monica Nkiri</span></h2>
+        <p class="hero-tagline">I build intelligent, data-driven web applications 
+            with a clean user experience.</p>
+        <div class="hero-buttons">
+            <a href="#projects" class="hero-btn primary">View My Work</a>
+            <a href="MONICA NKIRI Cv.pdf" class="hero-btn secondary">Download Resume</a>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2>👋🏽 About Me</h2>
+    <div class="about-container">
+        <p>
+            I'm a developer passionate about bridging the gap between clean, responsive UI and powerful, data-driven insights. My journey began with a love for the web's building blocks—HTML, CSS, and JavaScript—crafting interfaces that are both beautiful and accessible.
+        </p>
+        <p>
+            This foundation led me to explore what's "under the hood." My recent deep-dive into AI and Data Science with Python, Pandas, and visualization tools is driven by a simple goal: to not just *build* applications, but to build *smart* applications that solve real-world problems.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>My Toolkit</h2>
+    <div class="skill-grid fade-up">
+        <div class="skill-card">
+            <i class="fab fa-html5"></i>
+            <h3>HTML5</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-css3-alt"></i>
+            <h3>CSS3</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-js"></i>
+            <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fab fa-python"></i>
+            <h3>Python</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Data Analysis</h3>
+            <p>(Pandas, NumPy)</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-palette"></i>
+            <h3>Data Visualization</h3>
+            <p>(Seaborn, Matplotlib)</p>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Google Colab</h3>
+        </div>
+        <div class="skill-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Responsive Design</h3>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>🛠️ Featured Projects</h2>
+    <div class="projects" id="projects-container" aria-live="polite"></div>
+
+    <div class="github-link fade-up">
+        <a class="github-btn" href="https://github.com/Luwisky" target="_blank" rel="noopener">
+            <i class="fab fa-github" aria-hidden="true"></i>
+            <span class="github-text">See more on GitHub</span>
+            <span class="github-arrow" aria-hidden="true">→</span>
+        </a>
+    </div>
+
+    <script>
+    (async function(){
+        let data = { heroImage: '', projects: [] };
+        let res;
+        const container = document.getElementById('projects-container');
+
+        const fallbackProjects = [
+            {
+                "name": "AI-Powered Sales Dashboard",
+                "image": "https://placehold.co/600x400/0F101A/a78bfa?text=Sales+Dashboard",
+                "tech": "Python, Pandas, Seaborn, Flask",
+                "description": "A web dashboard that analyzes sales data to forecast future trends and identify top-performing products.",
+                "url_demo": "#",
+                "url_code": "https://github.com/Luwisky"
+            },
+            {
+                "name": "Responsive E-commerce Homepage",
+                "image": "https://placehold.co/600x400/0F101A/a78bfa?text=E-commerce+Site",
+                "tech": "HTML5, CSS3, JavaScript",
+                "description": "A pixel-perfect, mobile-first landing page for a modern e-commerce brand, focusing on accessibility and performance.",
+                "url_demo": "#",
+                "url_code": "https://github.com/Luwisky"
+            },
+            {
+              "name": "Data Visualization Study",
+              "image": "https://placehold.co/600x400/0F101A/a78bfa?text=Data+Viz",
+              "tech": "Matplotlib, Seaborn, Google Colab",
+              "description": "Analyzed a public dataset to find hidden correlations and presented findings with interactive charts.",
+              "url_demo": "#",
+              "url_code": "https://github.com/Luwisky"
+            }
+        ];
+
+        if (location.protocol === 'file:') {
+            data.projects = fallbackProjects;
+            const heroImg = document.getElementById('hero-img');
+            if (heroImg) heroImg.src = 'https://placehold.co/150x150/c7d2fe/0a0a1a?text=MN';
+            renderProjects();
+            return;
+        }
+
+        try {
+            res = await fetch('projects.json');
+            if (!res.ok) throw new Error('Failed to load projects.json: ' + res.status);
+            data = await res.json();
+        } catch (err) {
+            data.projects = fallbackProjects;
+            const heroImg = document.getElementById('hero-img');
+            if (heroImg) heroImg.src = 'https://placehold.co/150x150/c7d2fe/0a0a1a?text=MN';
+        }
+
+        const heroImg = document.getElementById('hero-img');
+        if (heroImg && data.heroImage) {
+            try {
+                heroImg.src = new URL(data.heroImage, (res && res.url) || location.href).href;
+            } catch (e) {
+                heroImg.src = data.heroImage;
+            }
+        } else if (heroImg) {
+             heroImg.src = 'https://placehold.co/150x150/c7d2fe/0a0a1a?text=MN';
+        }
+
+        function renderProjects(){
+            container.innerHTML = '';
+            if (!data.projects || data.projects.length === 0) {
+                 container.innerHTML = '<p class="projects-empty">No projects to show at this time.</p>';
+                 return;
+            }
+
+            data.projects.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'project-card fade-up';
+
+                const imgLink = document.createElement('a');
+                imgLink.href = p.url_demo || p.url_code || '#';
+                imgLink.target = '_blank';
+                imgLink.rel = 'noopener';
+
+                const img = document.createElement('img');
+                if (p.image) {
+                    try {
+                        img.src = new URL(p.image, (res && res.url) || location.href).href;
+                    } catch (e) {
+                        img.src = p.image;
+                    }
+                } else {
+                    img.src = 'https://placehold.co/600x400/0F101A/a78bfa?text=Project';
+                }
+                img.alt = (p.name || 'Project') + ' screenshot';
+                imgLink.appendChild(img);
+                card.appendChild(imgLink);
+
+                const content = document.createElement('div');
+                content.className = 'card-content';
+                
+                const h3 = document.createElement('h3');
+                h3.textContent = p.name || 'Untitled Project';
+                content.appendChild(h3);
+
+                const tech = document.createElement('p');
+                tech.className = 'tech';
+                tech.textContent = p.tech || '';
+                content.appendChild(tech);
+                
+                const desc = document.createElement('p');
+                desc.className = 'project-description';
+                desc.textContent = p.description || 'No description available.';
+                content.appendChild(desc);
+
+                const footer = document.createElement('div');
+                footer.className = 'card-footer';
+
+                if (p.url_demo) {
+                    const linkDemo = document.createElement('a');
+                    linkDemo.href = p.url_demo;
+                    linkDemo.target = '_blank';
+                    linkDemo.rel = 'noopener';
+                    linkDemo.className = 'project-link demo';
+                    linkDemo.innerHTML = 'Live Demo <i class="fas fa-external-link-alt"></i>';
+                    footer.appendChild(linkDemo);
+                }
+
+                if (p.url_code) {
+                    const linkCode = document.createElement('a');
+                    linkCode.href = p.url_code;
+                    linkCode.target = '_blank';
+                    linkCode.rel = 'noopener';
+                    linkCode.className = 'project-link code';
+                    linkCode.innerHTML = 'Source Code <i class="fab fa-github"></i>';
+                    footer.appendChild(linkCode);
+                }
+                
+                content.appendChild(footer);
+                card.appendChild(content);
+                container.appendChild(card);
+            });
+        }
+
+        renderProjects();
+    })();
+    </script>
+</section>
+
+<section id="contact">
+    <h2>Get In Touch</h2>
+    <p class="contact-sub">
+        I'm currently open to new opportunities. <br>
+        Feel free to reach out via phone, email, or my social links.
+    </p>
+    <div class="contact-icons fade-up">
+        <a href="tel:+2347059083946" title="Call"><i class="fas fa-phone"></i></a>
+        <a href="mailto:monica.nkiri@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="http://linktr.ee/wiskycode" target="_blank" title="Linktree"><i class="fas fa-link"></i></a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Monica Nkiri. All rights reserved.</p>
+</footer>
+
+<button id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+    (function(){
+        const header = document.getElementById('main-header');
+        if (!header) return;
+        const scrollOffset = 50;
+
+        function handleScroll() {
+            if (window.scrollY > scrollOffset) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+    })();
+
+    (function(){
+        const scrollBtn = document.getElementById("scrollTop");
+        if (!scrollBtn) return;
+
+        window.addEventListener("scroll", () => {
+            scrollBtn.style.display = window.scrollY > 400 ? "flex" : "none";
+        });
+        scrollBtn.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
+    })();
+
+    (function(){
+        const navToggle = document.getElementById('nav-toggle');
+        const nav = document.querySelector('header nav');
+        const overlay = document.getElementById('nav-overlay');
+        if (!navToggle || !nav) return;
+
+        function closeNav(){
+            nav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded','false');
+            document.body.classList.remove('nav-open');
+            if (overlay) overlay.classList.remove('visible');
+        }
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            document.body.classList.toggle('nav-open', isOpen);
+            if (overlay) overlay.classList.toggle('visible', isOpen);
+        });
+
+        if (overlay) overlay.addEventListener('click', closeNav);
+
+        document.querySelectorAll('header nav a').forEach(a => a.addEventListener('click', closeNav));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeNav();
+        });
+    })();
+</script>
+
+</body>
+</html>
