@@ -1,0 +1,34 @@
+
+{
+  "heroImage": "https://instagram.flos5-3.fna.fbcdn.net/v/t51.2885-19/523101670_17889292911296239_5184132226244452484_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.flos5-3.fna.fbcdn.net&_nc_cat=107&_nc_oc=Q6cZ2QGgQMKtsuKuBkW-Xv5KHpAZjE_cjcm2EQguX3_uw5G48TCkty-W9Mk6x3cfpXIUCxk&_nc_ohc=5RJpbUWa7ysQ7kNvwEFVSr1&_nc_gid=CpzH4QiVatdYBBBqh5zXcQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfjJE8JUmXBzsCYM2DrQbo9KH5MtwMeZEgEnKHc0HHsLJw&oe=691CD70F&_nc_sid=8b3546",
+  "projects": [
+    {
+      "id": 1,
+      "name": "A Testimonial Page",
+      "url": "https://testimonial-five-coral.vercel.app/",
+      "image": "https://my-personal-portfolio-kmor.vercel.app/images/Testimonal.png",
+      "tech": "HTML CSS"
+    },
+    {
+      "id": 2,
+      "name": "Newsletter",
+      "url": "https://newsletter-nine-pied.vercel.app/",
+      "image": "https://my-personal-portfolio-kmor.vercel.app/images/Newsletter.png",
+      "tech": "HTML CSS JavaScript"
+    },
+    {
+      "id": 3,
+      "name": "Recipe Page",
+      "url": "https://recipe-lyart-one.vercel.app/",
+      "image": "https://my-personal-portfolio-kmor.vercel.app/images/Recipe%20page.png",
+      "tech": "HTML CSS"
+    },
+    {
+      "id": 4,
+      "name": "Landing Page",
+      "url": "https://meet-landing-page-flax-iota.vercel.app/",
+      "image": "https://my-personal-portfolio-kmor.vercel.app/images/landingpage.png",
+      "tech": "HTML CSS"
+    }
+  ]
+}
